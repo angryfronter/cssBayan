@@ -1,16 +1,10 @@
-p{
-    font-weight: bold;
-    font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
 img{
-    width: 350px;
-    height: 370px;
+    width: 100%;
+    height: auto;
 }
 
 .meme{
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 /* Стили для выпадающего списка */
@@ -19,20 +13,25 @@ img{
     display: inline-block;
   }
   
+
+  
+  i{
+    margin-left: 10vh;
+    margin-block-end: 1vh;
+  }
+
+
   /* Стили для кнопки */
   .btn {
     background-color: white;
     color: blue;
-    padding: 12px;
-    font-size: 20px;
+    padding: 0.75rem;
+    font-size: 2vh;
     font-weight: bold;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border: none;
     cursor: pointer;
-    border-radius: 50px;
   }
-
-
 
   .btn:hover{
     color: black;
@@ -43,20 +42,34 @@ img{
     display: none;
     opacity: 0;
     transition: opacity 0.5s ease;
-    border-radius: 50px;
-
 }
 
+.meme .fa-xmark{
+  transition: all 1s ease-in-out;
+}
+
+.meme:hover .fa-xmark::before{
+  transform: rotate(90deg);
+  content: "\f00c";
+}
 
   /* Показать содержимое выпадающего списка при нажатии на кнопку */
   .meme:hover .meme-content {
     display: block;
     opacity: 1;
-    border-radius: 50px ;
 }
 
 .meme1:not(:hover) {
     background-color: white;
+  }
+
+  .meme-content {
+    opacity: 0;
+    transition: all 2s ease-in-out;
+  }
+  
+  .btn:hover .meme-content {
+    opacity: 1;
   }
 
 .meme:focus-within .meme-content{
@@ -74,74 +87,52 @@ img{
   
   body {
     font-family: 'Courier New', Courier, monospace;
-    display: block;
-    flex-direction: column;
+    display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+        
   }
   
-  .header {
-    font-size: 27px;
-    font-weight: bold;
-    text-align: center;
+  .container:hover {
+    cursor: pointer;
   }
 
   @media only screen and (max-width: 767px) {
-    p {
-    font-size: 16px;
-    }
     
     img {
     width: 100%;
     height: auto;
     }
     
-    .header {
-    font-size: 20px;
-    }
-    
     .btn {
-    font-size: 16px;
+    font-size: 3.5vh;
     }
     }
     
     
     @media only screen and (min-width: 768px) and (max-width: 1023px) {
-    p {
-    font-size: 18px;
-    }
-    
+
     img {
     width: 50%;
     height: auto;
     }
     
-    .header {
-    font-size: 24px;
-    }
-    
     .btn {
-    font-size: 18px;
+    font-size: 4vh;
     }
     }
     
     
     @media only screen and (min-width: 1024px) {
-    p {
-    font-size: 20px;
-    }
+   
     
     img {
-    width: 350px;
-    height: 370px;
+    width: 100%;
+    height: auto;
     }
     
-    .header {
-    font-size: 27px;
-    }
     
     .btn {
-    font-size: 20px;
+    font-size: 4.5vh;
     }
     }
