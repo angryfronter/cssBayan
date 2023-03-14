@@ -136,3 +136,16 @@ img{
     font-size: 4.5vh;
     }
     }
+
+
+    @media (hover: hover) {
+      .meme {
+        box-shadow: white;
+      }
+    }
+    
+    @media (hover: none) {
+      .meme {
+        background-color: white;
+      }
+    }
